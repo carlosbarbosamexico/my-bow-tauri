@@ -1,0 +1,118 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Bow",
+  "version": "1.0.0",
+  "identifier": "com.bowsapp.desktop",
+  "build": {
+    "beforeBuildCommand": "",
+    "beforeDevCommand": "",
+    "devUrl": "https://app.bowsapp.com/my-bow",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "withGlobalTauri": false,
+    "security": {
+      "csp": "default-src 'self' https://app.bowsapp.com https://*.bowsapp.com https://accounts.google.com https://appleid.apple.com https://github.com https://login.microsoftonline.com https://*.auth0.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://app.bowsapp.com https://*.bowsapp.com; style-src 'self' 'unsafe-inline' https://app.bowsapp.com https://*.bowsapp.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://app.bowsapp.com; img-src 'self' data: https: blob:; connect-src 'self' https://app.bowsapp.com https://*.bowsapp.com wss://*.bowsapp.com https://accounts.google.com https://*.google.com https://appleid.apple.com https://github.com https://login.microsoftonline.com https://*.auth0.com; frame-src 'self' https://accounts.google.com https://appleid.apple.com https://github.com https://login.microsoftonline.com https://*.auth0.com",
+      "dangerousDisableAssetCspModification": false,
+      "freezePrototype": false
+    },
+    "windows": [
+      {
+        "label": "main",
+        "title": "Bow",
+        "width": 1200,
+        "height": 800,
+        "minWidth": 800,
+        "minHeight": 600,
+        "resizable": true,
+        "fullscreen": false,
+        "center": true,
+        "transparent": false,
+        "decorations": true,
+        "alwaysOnTop": false,
+        "visible": true,
+        "focus": true,
+        "url": "https://app.bowsapp.com/my-bow",
+        "dragDropEnabled": false,
+        "acceptFirstMouse": true,
+        "tabbingIdentifier": "bow-main",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Bow/1.0.0"
+      }
+    ],
+    "trayIcon": null
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "resources": [],
+    "externalBin": [],
+    "copyright": "© 2024 Bow. All rights reserved.",
+    "category": "Productivity",
+    "shortDescription": "Bow Desktop Application",
+    "longDescription": "A desktop companion application for Bow - access your Bow workspace directly from your desktop.",
+    "createUpdaterArtifacts": true,
+    "macOS": {
+      "entitlements": null,
+      "exceptionDomain": "",
+      "frameworks": [],
+      "providerShortName": null,
+      "signingIdentity": null,
+      "minimumSystemVersion": "10.15"
+    },
+    "windows": {
+      "certificateThumbprint": null,
+      "digestAlgorithm": "sha256",
+      "timestampUrl": "http://timestamp.digicert.com",
+      "wix": null,
+      "nsis": {
+        "installerIcon": "icons/icon.ico",
+        "headerImage": null,
+        "sidebarImage": null,
+        "installMode": "currentUser",
+        "languages": ["English"],
+        "displayLanguageSelector": false,
+        "compression": "lzma"
+      }
+    },
+    "linux": {
+      "appimage": {
+        "bundleMediaFramework": true
+      },
+      "deb": {
+        "depends": [
+          "libwebkit2gtk-4.1-0",
+          "libgtk-3-0"
+        ],
+        "section": "utils",
+        "priority": "optional"
+      },
+      "rpm": {
+        "release": "1"
+      }
+    }
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "YOUR_UPDATER_PUBLIC_KEY_HERE",
+      "endpoints": [
+        "https://releases.bowsapp.com/{{target}}/{{arch}}/{{current_version}}"
+      ],
+      "windows": {
+        "installMode": "passive"
+      }
+    },
+    "deep-link": {
+      "desktop": {
+        "schemes": ["bows"]
+      }
+    }
+  }
+}
+

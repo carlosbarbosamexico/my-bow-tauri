@@ -1,0 +1,34 @@
+{
+  "name": "my-bow-tauri",
+  "version": "1.0.0",
+  "description": "Bow Desktop Application - A Tauri wrapper for the Bow web app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tauri dev",
+    "build": "tauri build",
+    "build:debug": "tauri build --debug",
+    "build:macos": "tauri build --target universal-apple-darwin",
+    "build:macos-intel": "tauri build --target x86_64-apple-darwin",
+    "build:macos-arm": "tauri build --target aarch64-apple-darwin",
+    "build:windows": "tauri build --target x86_64-pc-windows-msvc",
+    "build:linux": "tauri build --target x86_64-unknown-linux-gnu",
+    "tauri": "tauri",
+    "icon": "tauri icon"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "bow",
+    "desktop",
+    "tauri",
+    "productivity"
+  ],
+  "author": "Bow Team",
+  "license": "MIT"
+}
+
