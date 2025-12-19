@@ -1,8 +1,7 @@
 # Dependencies
 node_modules/
 
-# Build outputs
-dist/
+# Build outputs (keep dist/ - it contains our minimal frontend)
 src-tauri/target/
 
 # IDE
