@@ -57,7 +57,7 @@
     "category": "Productivity",
     "shortDescription": "Bow Desktop Application",
     "longDescription": "A desktop companion application for Bow - access your Bow workspace directly from your desktop.",
-    "createUpdaterArtifacts": true,
+    "createUpdaterArtifacts": false,
     "macOS": {
       "entitlements": null,
       "exceptionDomain": "",
